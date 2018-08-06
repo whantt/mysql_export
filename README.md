@@ -28,8 +28,7 @@ vim -R aaa.sql
 
 每条SQL必须以分号;结尾
 
-####################################################
-
+```bash
 SELECT id,mobile,TEXT,created_at FROM test_sms_log WHERE
 created_at >= '2018-07-17 00:00:00' AND
 created_at <= '2018-07-17 23:59:59' AND TEXT LIKE '%导出%';
@@ -39,8 +38,7 @@ created_at >= '2018-07-17 00:00:00' AND created_at <= '2018-07-18 23:59:59' AND 
 
 
 SELECT id,mobile,TEXT,created_at FROM test_sms_log WHERE created_at >= '2018-07-17 00:00:00' AND created_at <= '2018-07-25 23:59:59' AND TEXT LIKE '%你好%';
-
-####################################################
+```
 
 
 
@@ -50,7 +48,7 @@ SELECT id,mobile,TEXT,created_at FROM test_sms_log WHERE created_at >= '2018-07-
 
 python export_data.py -uincep_user -p123.com -H172.17.10.40 -P3306 -dtest -D/tmp/zhangsan -egbk -txlsx -f aaa.sql
 查看导出进度：
-
+```bash
 2018-08-06 14:08:56 - INFO - ### 提示 ###
 2018-08-06 14:08:56 - INFO - 用户名：incep_user
 2018-08-06 14:08:56 - INFO - 密码：123.com
@@ -102,4 +100,5 @@ created_at >= '2018-07-17 00:00:00' AND created_at <= '2018-07-18 23:59:59' AND 
 2018-08-06 14:09:35 - INFO - 正在压缩文件：./result_201808061408_2.xlsx ---> ./result_201808061408_2.xlsx.zip
 2018-08-06 14:09:35 - INFO - 删除源文件：./result_201808061408_2.xlsx
 2018-08-06 14:09:35 - INFO - 耗时：13.01s
+```
 
