@@ -82,8 +82,9 @@ class ExportData(object):
     def get_count(self, sql):
         # 查询当前SQL的返回的查询数量，返回分页的SQL列表
         # 分页数量：10000
-        rewrite_rule = re.compile('([\s\S]*)SELECT([\s\S]*) FROM ([\s\S]*)', re.I)
-        count_query = rewrite_rule.sub(r'SELECT count(*) as count FROM \3', sql)
+        # rewrite_rule = re.compile('([\s\S]*)SELECT([\s\S]*) FROM ([\s\S]*)', re.I)
+        # count_query = rewrite_rule.sub(r'SELECT count(*) as count FROM \3', sql)
+        count_query = f"select count(*) as count from {sql} as subquery"
 
         self.conn.cursorclass = pymysql.cursors.DictCursor
         with self.conn.cursor() as cursor:
