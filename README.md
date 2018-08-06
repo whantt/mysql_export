@@ -11,6 +11,7 @@
 导出命令例子：
 
 python export_data.py -uincep_user -p123.com -H172.17.10.40 -P3306 -dtest -D./ -egbk -txlsx -f aaa.sql
+
 python export_data.py -uincep_user -p123.com -H172.17.10.40 -P3306 -dtest -D./ -eutf-8 -ttxt -f aaa.sql
 
 
